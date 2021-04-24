@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url(assets/fonts/GoogleSans-Regular-v1.27.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url(assets/fonts/GoogleSans-Bold-v1.27.ttf);
+  font-weight: bold;
+}
+
+body {
+  background-color: #f9fcff;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 20px;
+}
+
+main {
+  margin: 50px auto;
+  width: 80%;
+  padding: 30px 15px;
+  max-width: 450px;
+  border: 2px solid #f9fcff;
+  border-radius: 15px;
+  padding-bottom: 80px;
+  background-color: white;
+  box-shadow: 0 0 10px 3px #3F51B5;
+}
+
+img.logos {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+
+p {
+  margin: 30px auto;
+  text-align: center;
+}
+
+fieldset {
+  border: none;
+  padding: 6px 12px 5px 12px;
+}
+
+div#left-desktop > fieldset {
+  margin-bottom: 30px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+small {
+  display: block;
+  margin-bottom: -5px;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+label {
+  display: block;
+  margin: 5px;
+}
+
+label.standalone {
+  margin: 0px 15px 30px 15px;
+  font-weight: 700;
+}
+
+label.standalone-text {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+label.standalone-text input.blue:placeholder-shown + span {
+  display: none;
+}
+
+::placeholder {
+  color: #000000;
+  font-weight: bold;
+  opacity: 1;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
+input.blue {
+  border: none;
+  border-bottom: 1px solid grey;
+  margin-top: 5px;
+  min-width: 240px;
+  transition: border 1s;
+  height: 32px;
+  font-size: 1rem;
+}
+
+input.blue:focus {
+  border: none;
+  border-bottom: 3px solid #0000FF;
+  outline: none;
+}
+
+input[fieldset-text] {
+  margin-left: 15px;
+  min-width: 225px;
+}
+
+select {
+  min-width: 40px;
+  min-height: 20px;
+  margin: 0 0 0 10px;
+}
+
+button {
+  min-width: 75px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  background-color: #0000FF;
+  box-shadow: 0.5px 0.5px 3px 1px #3F51B5;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+} 
+
+button[type="submit"] {
+  float: right;
+  margin: 20px 35px 20px 0;
+}
+
+button[type="submit"]:disabled {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 992px) {
+  main {
+    max-width: 900px;
+    border-radius: 25px;
+    padding: 10px 50px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+  }
+
+  form div {
+    margin-top: 10px;
+  }
+
+  input.blue {
+    min-width: 300px;
+  }
+
+  input[fieldset-text] {
+    min-width: 285px;
+  }
+}

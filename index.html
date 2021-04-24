@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" type="text/css" href="assets/styles.css">
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png" />
+  <title>Submission Form | DES & DEV Bootcamp | Genesys AE-FUNAI | GDSC AE-FUNAI</title>
+  <meta name="keywords"
+    content="Design, Web Development, Genesys Tech Hub, Genesys Campus Clubs, Genesys AE-FUNAI, Google Developer Student Clubs, GDSC, Google Developers, AE-FUNAI, DSC AE-FUNAI">
+  <meta name="description"
+    content="Submit your individual project during the Des & Dev Bootcamp. The Des & Dev Bootcamp was a six weeks intensive learning program in AE-FUNAI where learners learnt either UI/UX Design or Web Development, and was organised by Genesys and GDSC both in AE-FUNAI">
+</head>
+<body>
+  <main>
+    <!-- <img src="/logo-vertical.png" alt="logo" class="logo"> -->
+    <img src="assets/images/logos.png" alt="logo" class="logos">
+    <h1>Submission Form</h1>
+    <form method="POST" id="task">
+      <div id="left-desktop">
+        <label class="standalone standalone-text">
+          <input type="text" class="blue" name="name" placeholder="Full Name" required minlength="3">
+          <span>Full Name</span>
+        </label>
+        <label class="standalone standalone-text">
+          <input type="email" class="blue" name="email" placeholder="Email Address" required minlength="3">
+          <span>Email Address</span>
+        </label>
+        <label class="standalone standalone-text">
+          <input type="tel" class="blue" name="phone" placeholder="Phone Number" required pattern="^\+234[789][01]\d{8}$">
+          <span>
+            <span>Phone Number</span>
+            <small>Whatsapp Phone Number, Please start with +234...</small>
+          </span>
+        </label>
+        <label class="standalone standalone-text">
+          <input type="url" class="blue" name="link" placeholder="Submission Link" required>
+          <span>Submission Link</span>
+        </label>
+      </div>
+      <div id="right-desktop">
+        <fieldset>
+          <legend>Week</legend>
+          <label>
+            <input type="radio" name="week" value="0" required>
+            Intro
+          </label>
+          <label>
+            <input type="radio" name="week" value="1">
+            Week 1
+          </label>
+          <label>
+            <input type="radio" name="week" value="2" selected>
+            Week 2
+          </label>
+          <label>
+            <input type="radio" name="week" value="3">
+            Week 3
+          </label>
+          <label>
+            <input type="radio" name="week" value="4">
+            Week 4
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Track</legend>
+          <label>
+            <input type="radio" name="track" value="ui" required>
+            UI/UX Design
+          </label>
+          <label>
+            <input type="radio" name="track" value="web">
+            Web Development
+          </label>
+        </fieldset>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </main>
+  <script type="text/javascript">
+    // post form details to google sheets
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyXBEa2ViXCNWQg6mJOp2XCdJa8WR_cf-yYYR5X1ixKG6PbHFQ/exec';
+    const form = document.querySelector('#task');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      console.log(Object.fromEntries(new FormData(form)));
+      // document.querySelector('button').disabled = true;
+      // fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      //   .then(response => location.assign('thankyou.html'))
+      //   .catch(error => console.error('Error!', error.message));
+    });
+  </script>
+</body>
+</html>
