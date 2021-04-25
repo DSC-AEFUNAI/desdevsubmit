@@ -83,8 +83,9 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
       document.querySelector('button').disabled = true;
+      const link = Object.fromEntries(new FormData(form)).link;
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => location.assign('thankyou.html'))
+        .then(response => location.assign(`thankyou.html?link=${link}`))
         .catch(error => {
           document.querySelector('button').disabled = false;
           console.error('Error!', error.message);

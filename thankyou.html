@@ -39,21 +39,27 @@
       <p>Please share your work on social media and win a prize for sharing</p>
       <div id="social-icons-container">
         <a href="https://facebook.com/sharer.php?u=LINK&t=My%20Work%20during%20the%20Des%20%26%20Dev%20Bootcamp"
-          class="social-icon decoded" target="_blank" rel="noreferrer noopener" title="Share to Facebook"><img
+          class="social-icon" target="_blank" rel="noreferrer noopener" title="Share to Facebook"><img
             src="assets/images/facebook.svg" alt="Facebook Icon"></a>
-        <a href="https://twitter.com/intent/tweet?text=I%20just%20submitted%20my%20task%20for%20the%20DES%20%26%20DEV%20Bootcamp%20organized%20by%20Genesys%20and%20GDSC%20both%20in%20AE-FUNAI.%20Checkout%20my%20work%20at%20LINK%0D%0A%0D%0A%23weAreGenesys%0D%0A%23GDSCAEFUNAI"
-          class="social-icon encode" target="_blank" rel="noreferrer noopener" title="Share to Twitter"><img
+        <a href="https://twitter.com/intent/tweet?text=I%20just%20submitted%20my%20task%20for%20the%20DES%20%26%20DEV%20Bootcamp%20organized%20by%20Genesys%20and%20GDSC%20both%20in%20AE-FUNAI.%20Check%20out%20my%20work%20at%20LINK%0D%0A%0D%0A%23weAreGenesys%0D%0A%23GDSCAEFUNAI%0D%0A@GenesysAEFUNAI%0D%0A@dscaefunai"
+          class="social-icon" target="_blank" rel="noreferrer noopener" title="Share to Twitter"><img
             src="assets/images/twitter.svg" alt="Share to Twitter"></a>
         <a href="https://www.linkedin.com/shareArticle?mini=true&url=LINK&title=My%20Work%20during%20the%20Des%20%26%20Dev%20Bootcamp"
-          class="social-icon decoded" target="_blank" rel="noreferrer noopener" title="Share to LinkedIn"><img
+          class="social-icon" target="_blank" rel="noreferrer noopener" title="Share to LinkedIn"><img
             src="assets/images/linkedin.svg" alt="Share to LinkedIn"></a>
-        <a href="https://api.whatsapp.com/send?text=I%20just%20submitted%20my%20task%20for%20the%20DES%20%26%20DEV%20Bootcamp%20organized%20by%20Genesys%20and%20GDSC%20both%20in%20AE-FUNAI.%20Checkout%20my%20work%20at%20LINK%0D%0A%0D%0A%23weAreGenesys%0D%0A%23GDSCAEFUNAI"
-          class="social-icon encode" target="_blank" rel="noreferrer noopener" title="Share to WhatsApp"><img
+        <a href="https://api.whatsapp.com/send?text=I%20just%20submitted%20my%20task%20for%20the%20DES%20%26%20DEV%20Bootcamp%20organized%20by%20Genesys%20and%20GDSC%20both%20in%20AE-FUNAI.%20Check%20out%20my%20work%20at%20LINK%0D%0A%0D%0A%23weAreGenesys%0D%0A%23GDSCAEFUNAI"
+          class="social-icon" target="_blank" rel="noreferrer noopener" title="Share to WhatsApp"><img
             src="assets/images/whatsapp.png" alt="Share to LinkedIn"></a>
       </div>
     </div>
   </main>
   <script type="text/javascript">
+    const link = new URLSearchParams(window.location.search).get('link');
+    if (link) {
+      document.querySelectorAll('a.social-icon')
+        .forEach((socialLink) => 
+          socialLink.href = socialLink.href.replace('LINK', link));
+    }
   </script>
 </body>
 </html>
