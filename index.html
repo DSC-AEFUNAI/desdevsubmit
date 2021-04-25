@@ -50,7 +50,7 @@
             Week 1
           </label>
           <label>
-            <input type="radio" name="week" value="2" selected>
+            <input type="radio" name="week" value="2" checked>
             Week 2
           </label>
           <label>
@@ -79,15 +79,18 @@
   </main>
   <script type="text/javascript">
     // post form details to google sheets
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyXBEa2ViXCNWQg6mJOp2XCdJa8WR_cf-yYYR5X1ixKG6PbHFQ/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzOyn8mdeC6u-3UQJ16wGwGrECATythH4qgaNipDsgXVRBdekxxFXjDn7EmFv5Ty1Oo/exec';
     const form = document.querySelector('#task');
     form.addEventListener('submit', e => {
       e.preventDefault();
-      console.log(Object.fromEntries(new FormData(form)));
-      // document.querySelector('button').disabled = true;
-      // fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      //   .then(response => location.assign('thankyou.html'))
-      //   .catch(error => console.error('Error!', error.message));
+      document.querySelector('button').disabled = true;
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => location.assign('thankyou.html'))
+        .catch(error => {
+          document.querySelector('button').disabled = false;
+          console.error('Error!', error.message);
+          alert(error.message);
+        });
     });
   </script>
 </body>
